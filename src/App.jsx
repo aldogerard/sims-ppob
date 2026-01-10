@@ -1,13 +1,7 @@
-import React from 'react';
+import { AppRouter } from '@/routes';
 
-const App = () => {
-    const handleClick = () => {};
-
-    return (
-        <section>
-            <button onClick={handleClick}>Login</button>
-        </section>
-    );
-};
+function App() {
+    return <AppRouter />;
+}
 
 export default App;
