@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import AuthLayout from '@/layouts/authLayout';
 import BaseLayout from '@/layouts/BaseLayout';
+import AuthPages from '@/pages/AuthPages';
 
 const routes = [
     {
@@ -9,7 +10,7 @@ const routes = [
         children: [
             {
                 path: '/',
-                element: <div>Login</div>,
+                element: <AuthPages />,
             },
         ],
     },

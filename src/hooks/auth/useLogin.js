@@ -9,9 +9,9 @@ const postLogin = async (url, { arg }) => {
         const token = response?.data?.data?.token;
         localStorage.setItem('token', token);
 
-        return response;
+        return response?.data;
     } catch (error) {
-        return error;
+        return error?.response?.data;
     }
 };
 

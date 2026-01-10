@@ -5,9 +5,9 @@ import { fetcherMutation } from '@/lib/axios';
 const postRegistration = async (url, { arg }) => {
     try {
         const response = await fetcherMutation.post(url, arg);
-        return response;
+        return response?.data;
     } catch (error) {
-        return error;
+        return error?.response?.data;
     }
 };
 
