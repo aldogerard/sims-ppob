@@ -3,7 +3,6 @@ import axios from 'axios';
 const axiosInstance = (baseUrl) => {
     const instance = axios.create({
         baseURL: baseUrl,
-        withCredentials: true,
     });
 
     instance.interceptors.request.use((config) => {
