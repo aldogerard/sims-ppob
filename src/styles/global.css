@@ -1,0 +1,18 @@
+@import "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200&display=swap";
+@import "tailwindcss";
+
+@layer base {
+    :root {
+        font-family: "Poppins", system-ui, Avenir, Helvetica, Arial, sans-serif;
+        letter-spacing: -0.5px;
+    }
+}
+
+@theme {
+    --color-light: rgba(255, 255, 255, 1);
+    --color-dark: rgba(5, 28, 44, 1);
+
+    --color-primary: rgb(236, 0, 63);
+    --color-secondary: rgba(229, 244, 255, 1);
+    --color-error: rgba(237, 50, 65, 1);
+}
