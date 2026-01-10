@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import AuthLayout from '@/layouts/authLayout';
+import AuthLayout from '@/layouts/AuthLayout';
 import BaseLayout from '@/layouts/BaseLayout';
 import AuthPages from '@/pages/AuthPages';
 
