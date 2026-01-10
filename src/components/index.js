@@ -1,4 +1,4 @@
-export { default as Alert } from './shared/alert';
-export { default as Button } from './shared/button';
-export { default as Icon } from './shared/icon';
-export { default as Input } from './shared/input';
+export { default as Alert } from './shared/Alert';
+export { default as Button } from './shared/Button';
+export { default as Icon } from './shared/Icon';
+export { default as Input } from './shared/Input';
