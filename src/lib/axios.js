@@ -26,7 +26,7 @@ const axiosInstance = (baseUrl) => {
     return instance;
 };
 
-export const apiClient = axiosInstance(import.meta.env.BASE_URL || '');
+export const apiClient = axiosInstance(import.meta.env.VITE_BASE_URL || '');
 
 export const fetcher = (url) => apiClient.get(url).then((res) => res.data);
 
