@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import AuthLayout from '@/layouts/AuthLayout';
 import BaseLayout from '@/layouts/BaseLayout';
 import AuthPage from '@/pages/AuthPage';
+import HomePage from '@/pages/HomePage';
 
 const routes = [
     {
@@ -20,7 +21,7 @@ const routes = [
         children: [
             {
                 path: '/home',
-                element: <div>Home</div>,
+                element: <HomePage />,
             },
             {
                 path: '/topup',

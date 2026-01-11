@@ -5,7 +5,7 @@ import { fetcher } from '@/lib/axios';
 const fetchBalance = async (url) => {
     try {
         const response = await fetcher(url);
-        const balance = response?.data?.data?.balance || 0;
+        const balance = response?.data?.balance || 0;
         return balance;
     } catch (error) {
         return error;
@@ -13,10 +13,10 @@ const fetchBalance = async (url) => {
 };
 
 export const useGetBalance = () => {
-    const { data, trigger, isMutating, error } = useSWR(
+    const { data, trigger, isLoading, error } = useSWR(
         '/balance',
         fetchBalance
     );
 
-    return { balance: data, trigger, isLoading: isMutating, error };
+    return { balance: data, trigger, isLoading, error };
 };

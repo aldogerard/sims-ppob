@@ -5,18 +5,18 @@ import { fetcher } from '@/lib/axios';
 const fetchServices = async (url) => {
     try {
         const response = await fetcher(url);
-        const services = response?.data?.data;
+        const services = response?.data;
         return services;
     } catch (error) {
         return error;
     }
 };
 
-export const useGetBanner = () => {
-    const { data, trigger, isMutating, error } = useSWR(
-        '/banner',
+export const useGetServices = () => {
+    const { data, trigger, isLoading, error } = useSWR(
+        '/services',
         fetchServices
     );
 
-    return { services: data, trigger, isLoading: isMutating, error };
+    return { services: data, trigger, isLoading, error };
 };
