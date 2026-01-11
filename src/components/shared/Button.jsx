@@ -5,7 +5,7 @@ import { cn } from '@/utils/helper/cn';
 const Button = ({ name, type, disabled, className, variant, onClick }) => {
     const variantColors = {
         primary: 'bg-primary text-white',
-        secondary: 'bg-secondary text-white',
+        secondary: 'bg-white text-primary border border-primary',
         default: '',
     };
 
@@ -17,7 +17,7 @@ const Button = ({ name, type, disabled, className, variant, onClick }) => {
         <button
             type={type}
             className={cn(
-                'cursor-pointer rounded-xs px-4 py-1.75 font-semibold',
+                'cursor-pointer rounded-xs px-4 py-2 text-sm font-medium',
                 className,
                 variantClass,
                 disabled && 'cursor-not-allowed bg-gray-300'

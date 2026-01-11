@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import AuthLayout from '@/layouts/AuthLayout';
 import BaseLayout from '@/layouts/BaseLayout';
+import AccountPage from '@/pages/AccountPage';
 import AuthPage from '@/pages/AuthPage';
 import HomePage from '@/pages/HomePage';
 import PurchasePage from '@/pages/PurchasePage';
@@ -40,7 +41,7 @@ const routes = [
             },
             {
                 path: '/account',
-                element: <div>Account</div>,
+                element: <AccountPage />,
             },
         ],
     },

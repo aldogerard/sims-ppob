@@ -37,3 +37,17 @@ export const validateRegistration = (
 
     return errors;
 };
+
+export const validateProfile = (firstName, lastName) => {
+    const errors = {};
+
+    if (!firstName || firstName.trim() === '') {
+        errors.firstName = 'nama depan harus diisi';
+    }
+
+    if (!lastName || lastName.trim() === '') {
+        errors.lastName = 'nama belakang harus diisi';
+    }
+
+    return errors;
+};

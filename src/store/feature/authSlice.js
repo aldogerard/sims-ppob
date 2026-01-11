@@ -38,6 +38,13 @@ const authSlice = createSlice({
             const { name, value } = action.payload;
             state.registrationCredential[name] = value;
         },
+
+        setRegistrationCredentialForProfile: (state, action) => {
+            state.registrationCredential.email = action.payload.email;
+            state.registrationCredential.firstName = action.payload.first_name;
+            state.registrationCredential.lastName = action.payload.last_name;
+        },
+
         setRegistrationErrors: (state, action) => {
             state.registrationCredential.errors = action.payload;
         },
@@ -59,6 +66,7 @@ export const {
     setCurrentSection,
     setLoginCredential,
     setRegistrationCredential,
+    setRegistrationCredentialForProfile,
     setRegistrationErrors,
     removeRegistrationErrors,
     resetRegistration,

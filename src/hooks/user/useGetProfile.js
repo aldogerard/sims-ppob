@@ -13,6 +13,6 @@ const fetchProfile = async (url) => {
 };
 
 export const useGetProfile = () => {
-    const { data, trigger, isLoading, error } = useSWR('profile', fetchProfile);
-    return { profile: data, trigger, isLoading, error };
+    const { data, mutate, isLoading, error } = useSWR('profile', fetchProfile);
+    return { profile: data, mutate, isLoading, error };
 };

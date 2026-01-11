@@ -2,10 +2,10 @@ import useSWRMutation from 'swr/mutation';
 
 import { apiClient } from '@/lib/axios';
 
-const putProfileImage = async (url, file) => {
+const putProfileImage = async (url, { arg }) => {
     try {
         const formData = new FormData();
-        formData.append('image', file);
+        formData.append('file', arg.file);
 
         const response = await apiClient.put(url, formData, {
             headers: {
@@ -19,10 +19,10 @@ const putProfileImage = async (url, file) => {
 };
 
 export const usePutProfileImage = () => {
-    const { trigger, isMutating, error } = useSWRMutation(
+    const { trigger, isLoading, error } = useSWRMutation(
         '/profile/image',
         putProfileImage
     );
 
-    return { trigger, isLoading: isMutating, error };
+    return { trigger, isLoading, error };
 };
