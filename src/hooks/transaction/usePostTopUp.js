@@ -5,14 +5,14 @@ import { fetcherMutation } from '@/lib/axios';
 const postTopUp = async (url, { arg }) => {
     try {
         const response = await fetcherMutation.post(url, arg);
-        return response;
+        return response?.data;
     } catch (error) {
-        return error;
+        return error?.response?.data;
     }
 };
 
-export const useTopUp = () => {
-    const { trigger, isMutating, error } = useSWRMutation('/topup', postTopUp);
+export const usePostTopUp = () => {
+    const { trigger, isLoading, error } = useSWRMutation('/topup', postTopUp);
 
-    return { trigger, isLoading: isMutating, error };
+    return { trigger, isLoading, error };
 };

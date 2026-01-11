@@ -16,6 +16,8 @@ const Input = ({
     rightIcon,
     appearance,
     errorMessage,
+    formatNumber,
+    ...props
 }) => {
     return (
         <div className="flex flex-col gap-1">
@@ -56,12 +58,13 @@ const Input = ({
                     type={type}
                     name={name}
                     placeholder={placeholder}
-                    value={value}
+                    value={formatNumber ? (value ? new Intl.NumberFormat('id-ID').format(value) : '') : value}
                     onChange={onChange}
                     className={cn(
                         'flex-1 border-none text-sm focus:outline-none',
                         className
                     )}
+                    {...props}
                 />
 
                 {rightIcon && (

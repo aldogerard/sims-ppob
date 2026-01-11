@@ -5,7 +5,7 @@ import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 
 import App from './App.jsx';
-import { Alert } from './components';
+import { Alert, Modal } from './components';
 import { store } from './store';
 
 createRoot(document.getElementById('root')).render(
@@ -13,6 +13,7 @@ createRoot(document.getElementById('root')).render(
         <Provider store={store}>
             <App />
             <Alert />
+            <Modal />
         </Provider>
     </StrictMode>
 );

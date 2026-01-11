@@ -13,8 +13,14 @@ const BalanceSection = () => {
         setIsShowBalance((prev) => !prev);
     };
 
+    const formattedBalance = (balance) => {
+        return new Intl.NumberFormat('id-ID', {
+            currency: 'IDR',
+        }).format(balance);
+    };
+
     const getFormattedBalance = (balance) => {
-        return isShowBalance ? `Rp ${balance}` : 'Rp *******';
+        return isShowBalance ? `Rp ${formattedBalance(balance)}` : 'Rp *******';
     };
 
     if (isLoading) return <BalanceSkeleton />;

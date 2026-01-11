@@ -17,9 +17,10 @@ const Button = ({ name, type, disabled, className, variant, onClick }) => {
         <button
             type={type}
             className={cn(
-                'rounded-xs px-4 py-1.75 font-semibold',
+                'cursor-pointer rounded-xs px-4 py-1.75 font-semibold',
                 className,
-                variantClass
+                variantClass,
+                disabled && 'cursor-not-allowed bg-gray-300'
             )}
             onClick={onClick}
             disabled={disabled}

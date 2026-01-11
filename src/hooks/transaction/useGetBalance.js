@@ -13,10 +13,7 @@ const fetchBalance = async (url) => {
 };
 
 export const useGetBalance = () => {
-    const { data, trigger, isLoading, error } = useSWR(
-        '/balance',
-        fetchBalance
-    );
+    const { data, mutate, isLoading, error } = useSWR('/balance', fetchBalance);
 
-    return { balance: data, trigger, isLoading, error };
+    return { balance: data, mutate, isLoading, error };
 };

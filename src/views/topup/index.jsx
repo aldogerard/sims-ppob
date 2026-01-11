@@ -2,20 +2,20 @@ import React from 'react';
 
 import { BalanceSection, ProfileSection } from '@/components';
 
-import BannerSection from './section/BannerSection';
-import ServiceSection from './section/ServiceSection';
+import PricingSection from './section/PricingSection';
+import TitleSection from './section/TitleSection';
 
-const HomeView = () => {
+const TopupView = () => {
     return (
         <section className="flex flex-col gap-12">
             <div className="flex justify-between">
                 <ProfileSection />
                 <BalanceSection />
             </div>
-            <ServiceSection />
-            <BannerSection />
+            <TitleSection />
+            <PricingSection />
         </section>
     );
 };
 
-export default HomeView;
+export default TopupView;

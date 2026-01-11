@@ -4,6 +4,7 @@ import AuthLayout from '@/layouts/AuthLayout';
 import BaseLayout from '@/layouts/BaseLayout';
 import AuthPage from '@/pages/AuthPage';
 import HomePage from '@/pages/HomePage';
+import TopupPage from '@/pages/TopupPage';
 
 const routes = [
     {
@@ -25,7 +26,7 @@ const routes = [
             },
             {
                 path: '/topup',
-                element: <div>Topup</div>,
+                element: <TopupPage />,
             },
             {
                 path: '/transaction',
