@@ -6,6 +6,7 @@ import AuthPage from '@/pages/AuthPage';
 import HomePage from '@/pages/HomePage';
 import PurchasePage from '@/pages/PurchasePage';
 import TopupPage from '@/pages/TopupPage';
+import TransactionPage from '@/pages/TransactionPage';
 
 const routes = [
     {
@@ -35,7 +36,7 @@ const routes = [
             },
             {
                 path: '/transaction',
-                element: <div>Transaction</div>,
+                element: <TransactionPage />,
             },
             {
                 path: '/account',

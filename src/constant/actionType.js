@@ -1,4 +1,4 @@
 export const ActionType = {
-    TOP_UP: 'TOP_UP',
-    BUY: 'BUY',
+    TOP_UP: 'TOPUP',
+    BUY: 'PAYMENT',
 };
