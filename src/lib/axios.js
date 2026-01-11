@@ -18,10 +18,15 @@ const axiosInstance = (baseUrl) => {
             return response;
         },
         (error) => {
-            // if (error.response && error.response.status === 401) {
-            //     localStorage.removeItem('token');
-            //     window.location.href = '/';
-            // }
+            const path = window.location.pathname;
+            if (
+                error.response &&
+                error.response.status === 401 &&
+                path !== '/'
+            ) {
+                localStorage.removeItem('token');
+                window.location.href = '/';
+            }
             return Promise.reject(error);
         }
     );
