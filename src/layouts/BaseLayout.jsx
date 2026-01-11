@@ -1,11 +1,16 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 
+import Navbar from '@/components/ui/Navbar';
+
 const BaseLayout = () => {
     return (
-        <div>
-            <Outlet />
-        </div>
+        <section>
+            <Navbar />
+            <main className="container">
+                <Outlet />
+            </main>
+        </section>
     );
 };
 
