@@ -2,7 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import AuthLayout from '@/layouts/AuthLayout';
 import BaseLayout from '@/layouts/BaseLayout';
-import AuthPages from '@/pages/AuthPages';
+import AuthPage from '@/pages/AuthPage';
 
 const routes = [
     {
@@ -10,7 +10,7 @@ const routes = [
         children: [
             {
                 path: '/',
-                element: <AuthPages />,
+                element: <AuthPage />,
             },
         ],
     },

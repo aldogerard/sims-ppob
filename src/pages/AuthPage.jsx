@@ -2,8 +2,8 @@ import React from 'react';
 
 import AuthView from '@/views/auth';
 
-const AuthPages = () => {
+const AuthPage = () => {
     return <AuthView />;
 };
 
-export default AuthPages;
+export default AuthPage;
