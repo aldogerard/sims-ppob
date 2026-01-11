@@ -14,8 +14,9 @@ const Modal = () => {
     const { trigger: buy } = usePostTransaction();
 
     const { mutate: getBalance } = useGetBalance();
+    const { currentService } = useSelector((state) => state.service);
 
-    const { isOpen, type, message, price, actionType, actionText, code, name } =
+    const { isOpen, type, message, price, actionType, actionText } =
         useSelector((state) => state.modal);
 
     const formattedPrice = (value) => {
@@ -65,7 +66,9 @@ const Modal = () => {
     };
 
     const handleBuy = async () => {
-        const response = await buy({ service_code: code });
+        const response = await buy({
+            service_code: currentService?.service_code,
+        });
         const status = response?.status;
 
         if (status === 0) {
@@ -74,7 +77,7 @@ const Modal = () => {
                 showModal({
                     type: ModalType.SUCCESS,
                     price: price,
-                    message: `Pembayaran ${name} sebesar`,
+                    message: `Pembayaran ${currentService?.service_name} sebesar`,
                     actionText: 'Kembali ke Beranda',
                 })
             );
@@ -83,7 +86,7 @@ const Modal = () => {
             showModal({
                 type: ModalType.FAILED,
                 price: price,
-                message: `Pembayaran ${name} sebesar`,
+                message: `Pembayaran ${currentService?.service_name} sebesar`,
                 actionText: 'Kembali ke Beranda',
             })
         );

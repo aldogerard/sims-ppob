@@ -1,10 +1,21 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 import ServiceSkeleton from '@/components/skeleton/ServiceSkeleton';
 import { useGetServices } from '@/hooks/information/useGetServices';
+import { setCurrentService } from '@/store/feature/serviceSlice';
 
 const ServiceSection = () => {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
     const { services, isLoading } = useGetServices();
+
+    const handleClick = (service) => {
+        dispatch(setCurrentService(service));
+        navigate(`/purchase`);
+    };
 
     if (isLoading) return <ServiceSkeleton />;
 
@@ -13,7 +24,8 @@ const ServiceSection = () => {
             {services?.map((service) => (
                 <div
                     key={service?.service_code}
-                    className="flex w-[80%] flex-col items-center gap-1"
+                    onClick={() => handleClick(service)}
+                    className="flex w-[80%] cursor-pointer flex-col items-center gap-1"
                 >
                     <img
                         src={service?.service_icon}
